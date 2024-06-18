@@ -1,0 +1,17 @@
+# symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+# composer
+composer.phar
+composer.lock
+.composer/
+
+.php_cs.cache
