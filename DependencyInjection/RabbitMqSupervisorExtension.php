@@ -16,6 +16,8 @@ class RabbitMqSupervisorExtension extends Extension implements PrependExtensionI
 {
     /**
      * {@inheritDoc}
+     * 
+     * @return void
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -64,6 +66,11 @@ class RabbitMqSupervisorExtension extends Extension implements PrependExtensionI
         $container->setParameter('phobetor_rabbitmq_supervisor.commands', $config['commands']);
     }
 
+     /**
+     * Allow an extension to prepend the extension configurations.
+     *
+     * @return void
+     */
     public function prepend(ContainerBuilder $container)
     {
         $attributeNames = array('consumers', 'multiple_consumers', 'batch_consumers', 'rpc_servers');

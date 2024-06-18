@@ -7,6 +7,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InitCommand extends AbstractRabbitMqSupervisorAwareCommand
 {
+    /**
+     * Configures the current command.
+     *
+     * @return void
+     */
     protected function configure()
     {
         $this
@@ -15,6 +20,11 @@ class InitCommand extends AbstractRabbitMqSupervisorAwareCommand
         ;
     }
 
+    /**
+     * Executes the current command.
+     *
+     * @return int 0 if everything went fine, or an exit code
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->rabbitMqSupervisor->init();

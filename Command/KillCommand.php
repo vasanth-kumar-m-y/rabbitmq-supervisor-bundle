@@ -8,6 +8,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class KillCommand extends AbstractRabbitMqSupervisorAwareCommand
 {
+    /**
+     * Configures the current command.
+     *
+     * @return void
+     */
     protected function configure()
     {
         $this
@@ -17,6 +22,11 @@ class KillCommand extends AbstractRabbitMqSupervisorAwareCommand
         ;
     }
 
+    /**
+     * Executes the current command.
+     *
+     * @return int 0 if everything went fine, or an exit code
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->rabbitMqSupervisor->kill($input->getArgument('signal'));

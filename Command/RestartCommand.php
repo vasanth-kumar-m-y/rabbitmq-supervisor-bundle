@@ -8,6 +8,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class RestartCommand extends AbstractRabbitMqSupervisorAwareCommand
 {
+    /**
+     * Configures the current command.
+     *
+     * @return void
+     */
     protected function configure()
     {
         $this
@@ -17,6 +22,11 @@ class RestartCommand extends AbstractRabbitMqSupervisorAwareCommand
         ;
     }
 
+    /**
+     * Executes the current command.
+     *
+     * @return int 0 if everything went fine, or an exit code
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->rabbitMqSupervisor->setWaitForSupervisord((bool) $input->getOption('wait-for-supervisord'));
